@@ -110,7 +110,9 @@
             <div class="flex justify-end items-center gap-4">
                 <button type="button" class="px-4 py-2 bg-red-600 text-white rounded-lg"
                     x-on:click="modal=!modal">Batal</button>
-                <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded-lg">Tambah</button>
+                <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded-lg disabled:bg-green-400 disabled:cursor-not-allowed"><i
+                    class="fa-solid fa-circle-notch fa-spin hidden" wire:loading.class.remove="hidden"
+                    wire:target="login"></i> Tambah</button>
             </div>
         </form>
     </div>

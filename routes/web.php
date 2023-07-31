@@ -43,7 +43,7 @@ Route::middleware(['auth'])->group(function () {
         })->name('verification.notice');
         Route::get('/{id}/{hash}', function (EmailVerificationRequest $request) {
             $request->fulfill();
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard.index');
         })->middleware(['signed'])->name('verification.verify');
         Route::post('/verification-notification', function (Request $request) {
             $request->user()->sendEmailVerificationNotification();
